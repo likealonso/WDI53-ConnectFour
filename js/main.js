@@ -3,7 +3,7 @@
 
 /*----- app's state (variables) -----*/
 
-var board;
+var b;
 var turn;
 var winner;
 
@@ -16,34 +16,24 @@ var $msg = $('h1');
 
 $circles.on('click', function() {    
     var idx = parseInt(this.id);
-    if (board[idx] || winner) return;  
-    if (board[idx + 7]===0) return;
-    board[idx] = turn;
+    if (b[idx] || winner) return;  
+    if (b[idx + 7]===0) return;
+    b[idx] = turn;
     turn = turn === 'red' ? 'yellow' : 'red';
-    // rowAboveId = $(this).attr('id') - 7;
-    // rowAbove = $(this).parent().find('#' + rowAboveId);
-    // if (this.id > 34 || $(this).hasClass('empty'))
-    // {
-    //     $(this).attr('class', 'hasChip');
-    //     rowAbove.attr('class', 'empty');     
-    // } 
-    winner = getWinner();
+    winner = getWinner(idx);
     render()
     
 })
 
+$('#reset').on('click', function(){
+    init();
+    // render();
+  });
+
 /*----- functions -----*/
 
 function init(){
-    // board = [
-    //     [1, 1, 1, 1, 1, 1, 1],
-    //     [1, 1, 1, 1, 1, 1, 1],
-    //     [1, 1, 1, 1, 1, 1, 1],
-    //     [1, 1, 1, 1, 1, 1, 1],
-    //     [1, 1, 1, 1, 1, 1, 1],
-    //     [0, 0, 0, 0, 0, 0, 0],
-    // ];
-    board = [
+    b = [
         0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0,
@@ -53,25 +43,16 @@ function init(){
     ];
     turn = 'red' ;
     winner = null;
+    $('.circle').css("background-color", "white");
+    $('h1').html(`Let's go again! Red goes first!`).css('color', 'red');    
+    
 }
 
 function render() {
     $circles.each(function(idx) {
         // give the current div jQuery powers
-         $(this).css('background-color', board[idx])
+         $(this).css('background-color', b[idx])
       });
-    // $circles.each(function(idx) {
-    //     $(this).css('background-color', board[idx]);
-
-    // });
-    // if ($(board[28]).not("[hasChip]")) return;
-    // if (!$(board[28]).hasClass("hasChip")) return;
-    // if ($(board[28]).hasClass("hasChip")===false) return;
-    // // if (board[35]==='red') board[28]=2;
-    // // if (board[35]==='red' || board[35]==='yellow') board[28] = 0;
-    // // if (board[28]===0) board[28]='yellow'; 
-    // // // if (board[36]==='red' || board[36]==='yellow') board[29] = 0;
-    
 
     if (winner) {
         if (winner === 'T') {
@@ -81,11 +62,10 @@ function render() {
         }
       }
         else {
-        $msg.html(`It is Player ${turn}'s turn`);
+        $msg.css('color', turn).html(`It is Player ${turn}'s turn`)
+      } 
       }
-      }
-        
-    // iterate through the board's rows.
+  // iterate through the board's rows.
     // board.forEach(function (turn, i) {
     //     // within each row we'll iterate through each column
     //     // if it's 1 make it red,
@@ -97,18 +77,69 @@ function render() {
     //         $($circles[i]).css('background-color', 'yellow');
     //     }
     // })
+    
+function getWinner(idx) {
+    if(idx >= 35 && idx <= 41) {idx = 35};
+    if(idx >= 28 && idx <= 34) {idx = 28};
+    if(idx >= 21 && idx <= 27) {idx = 21};
+    if(idx >= 14 && idx <= 20) {idx = 14};
+    if(idx >= 7 && idx <= 13) {idx = 7};
+    if(idx >= 0 && idx <= 6) {idx = 0};
 
-function getWinner() {
-    if (board[35]===board[36] && board[35]===board[37] && board[35]===board[38]) {
-        return board[35];
-    }
+    
+        for (var i=0; i<b.length; i++) {
+            //vertical winning combinations
+            if (b[i] && b[i]===b[i+7] && b[i]=== b[i+14] && b[i]===b[i+21]) {
+                console.log('we got a winner')
+                return b[i]
+            }
+            
+            //horizontal winning combinations
+            for (var j=idx; j<idx + 4; j++) {
+            if (b[j] && b[j]===b[j+1] && b[j]===b[j+2] && b[j]===b[j+3]){
+                return b[j]
+                
+                }  
+            } 
+            // diagonal left to right winning combinations
+            for (var h=0; h<4; h++){
+                if (b[h] && b[h]===b[h+8] && b[h]===b[h+16] && b[h]===b[h+24])
+                return b[h];
+            }
+            for (var h=7; h<11; h++){
+                if (b[h] && b[h]===b[h+8] && b[h]===b[h+16] && b[h]===b[h+24])
+                return b[h];
+            }
+            for (var h=14; h<18; h++){
+                if (b[h] && b[h]===b[h+8] && b[h]===b[h+16] && b[h]===b[h+24])
+                return b[h];
+            }
+            
+            //diagonal right to left winning combinations
+            
+            for (var h=3; h<7; h++){
+                if (b[h] && b[h]===b[h+6] && b[h]===b[h+12] && b[h]===b[h+18])
+                return b[h];
+            }
+            for (var h=10; h<14; h++){
+                if (b[h] && b[h]===b[h+6] && b[h]===b[h+12] && b[h]===b[h+18])
+                return b[h];
+            }
+            for (var h=17; h<21; h++){
+                if (b[h] && b[h]===b[h+6] && b[h]===b[h+12] && b[h]===b[h+18])
+                return b[h];
+            }
+
+        //tie game 
+        if (b.includes(0)){
+            return 0;
+        }
+        if (!b.includes(0)){
+            return 'T'
+        }
+    
+    } 
 }
-
-$('h1').on('click', function(){
-    $(this).css({backgroundColor: 'red'});
-})
-
-
 
 init()
 render()

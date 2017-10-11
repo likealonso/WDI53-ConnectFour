@@ -1,10 +1,19 @@
+#reset {
+    position: relative;
+    left: 50%;
+    border: 2px solid blue;
+    margin: 0 0 10px 0;
+}
+body {
+    background-color: black;
+}
 h1 {
     color: blue;
     text-align: center;
 }
 
 .bigSquare {
-    border: 1px solid black;
+    border: 2px solid black;
     height: 600px;
     width: 800px;
     margin: 0 auto;
@@ -14,7 +23,7 @@ h1 {
 }
 
 .bigSquare * {
-    border: 1px solid black;
+    border: 2px solid black;
     height: 80px;
     width: 80px;
     display: inline-block;
