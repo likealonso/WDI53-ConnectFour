@@ -1,34 +1,113 @@
+/* .container{
+    position: fixed;
+} */
+#colButton1{
+    margin: 20px 0 0 285px;
+    border-radius: 20px;
+    color: red;
+    background-color:yellow;
+    border: red;
+    width: 60px;
+    height: 20px;
+    padding: 0 0 10px 0;
+    cursor: pointer;
+}
+#colButton2{
+    margin: 0 0 0 25px;
+    border-radius: 20px;
+    width: 60px;
+    border: red;
+    height: 20px;
+    padding: 0 0 10px 0;
+    
+}
+#colButton3{
+    margin: 0 0 0 25px;
+    border-radius: 20px;
+    width: 60px;
+    border: red;
+    height: 20px;
+    padding: 0 0 10px 0;
+    
+}
+#colButton4{
+    margin: 0 0 0 20px;
+    border-radius: 20px;
+    width: 60px;
+    border: red;
+    height: 20px;
+    padding: 0 0 10px 0;
+    
+}
+#colButton5{
+    margin: 0 0 0 25px;
+    border-radius: 20px;
+    width: 60px;
+    border: red;
+    height: 20px;
+    padding: 0 0 10px 0;
+    
+}
+#colButton6{
+    margin: 0 0 0 20px;
+    border-radius: 20px;
+    width: 60px;
+    border: red;
+    height: 20px;
+    padding: 0 0 10px 0;
+    
+}
+#colButton7{
+    margin: 0 0 0 25px;
+    border-radius: 20px;
+    width: 60px;
+    border: red;
+    height: 20px;
+    padding: 0 0 10px 0;
+    
+}
 #reset {
-    position: relative;
+    /* position: relative;
     left: 50%;
-    border: 2px solid blue;
-    margin: 0 0 10px 0;
+    border: 2px solid blue; */
+    margin: 0 0 10px 150px;
+    /* position: fixed; */
+    /* display: inline; */
+    /* display: inline-block; */
 }
 body {
     background-color: black;
+    
 }
-h1 {
-    color: blue;
+h1 {text-align: center;
+    color: pink;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 60px;
+}
+h2 {
     text-align: center;
+    font-family: Chalkboard, 'Comic Sans' , sans-serif;
 }
 
 .bigSquare {
-    border: 2px solid black;
-    height: 600px;
-    width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+    border-top: 1px solid white;
+    height: 450px;
+    width: 630px;
+    margin: 15px 20px 0 58px;
+    padding: 10px; 
     border-radius: 20px;
     background-color: blue;
+    display: inline-block;
+    /* position: fixed; */
 }
 
 .bigSquare * {
     border: 2px solid black;
-    height: 80px;
-    width: 80px;
+    height: 62px;
+    width: 63px;
     display: inline-block;
     border-radius: 150px;
-    margin: 5px 12px;
+    margin: 3px 10px;    
     background-color: white;
 
 }
