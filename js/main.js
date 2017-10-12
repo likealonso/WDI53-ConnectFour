@@ -16,6 +16,19 @@ var $msg = $('h2');
 
 $circles.on('click', function() {    
     var idx = parseInt(this.id);
+    if(idx % 7 === 0) track -= 7;
+    if(idx % 7 === 1) track2 -= 7;
+    if(idx % 7 === 2) track3 -= 7;
+    if(idx % 7 === 3) track4 -= 7;
+    if(idx % 7 === 4) track5 -= 7;
+    if(idx % 7 === 5) track6 -= 7;
+    if(idx % 7 === 6) track7 -= 7;
+    // if (b[track+7]==='Red' || b[track+7]==='Yellow' || b[track+7]===undefined) track -= 7;
+    // if (b[track2+7]==='Red' || b[track2+7]==='Yellow' || b[track2+7]===undefined) track2 -= 7;
+    // track -= 7;
+    // track2 -= 7;
+    // track3 -= 7;
+    // track4 -= 7;
     if (b[idx] || winner) return;  
     if (b[idx + 7]===0) return;
     b[idx] = turn;
