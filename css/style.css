@@ -118,12 +118,11 @@ nav {
     #colButton5, 
     #colButton6, 
     #colButton7 {
-        height: 33px;
-        width: 32px;
+        display: none;
     }
     
     #reset {
+        width: 100px;
         text-align: center;
-        font-size: 13px;
     }
 }
