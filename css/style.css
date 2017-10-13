@@ -1,113 +1,93 @@
-/* .container{
-    position: fixed;
-} */
-#colButton1{
-    margin: 20px 0 0 285px;
-    border-radius: 20px;
-    color: red;
-    background-color:yellow;
-    border: red;
-    width: 60px;
-    height: 20px;
-    padding: 0 0 10px 0;
-    cursor: pointer;
-}
-#colButton2{
-    margin: 0 0 0 25px;
-    border-radius: 20px;
-    width: 60px;
-    border: red;
-    height: 20px;
-    padding: 0 0 10px 0;
-    
-}
-#colButton3{
-    margin: 0 0 0 25px;
-    border-radius: 20px;
-    width: 60px;
-    border: red;
-    height: 20px;
-    padding: 0 0 10px 0;
-    
-}
-#colButton4{
-    margin: 0 0 0 20px;
-    border-radius: 20px;
-    width: 60px;
-    border: red;
-    height: 20px;
-    padding: 0 0 10px 0;
-    
-}
-#colButton5{
-    margin: 0 0 0 25px;
-    border-radius: 20px;
-    width: 60px;
-    border: red;
-    height: 20px;
-    padding: 0 0 10px 0;
-    
-}
-#colButton6{
-    margin: 0 0 0 20px;
-    border-radius: 20px;
-    width: 60px;
-    border: red;
-    height: 20px;
-    padding: 0 0 10px 0;
-    
-}
-#colButton7{
-    margin: 0 0 0 25px;
-    border-radius: 20px;
-    width: 60px;
-    border: red;
-    height: 20px;
-    padding: 0 0 10px 0;
-    
-}
-#reset {
-    /* position: relative;
-    left: 50%;
-    border: 2px solid blue; */
-    margin: 0 0 10px 150px;
-    /* position: fixed; */
-    /* display: inline; */
-    /* display: inline-block; */
-}
 body {
     background-color: black;
-    
 }
-h1 {text-align: center;
-    color: pink;
-    font-family: Helvetica, Arial, sans-serif;
+
+h1 {
+    text-align: center;
+    color: white;
+    font-family: 'Exo 2', sans-serif;
     font-size: 60px;
 }
+
 h2 {
     text-align: center;
-    font-family: Chalkboard, 'Comic Sans' , sans-serif;
+    font-family: 'Exo 2', sans-serif;
+}
+
+nav {
+    /* border: 1px red solid; */
+    text-align:center;
+    margin: 30px 0 9px 0;
+}
+
+#colButton1, 
+#colButton2, 
+#colButton3, 
+#colButton4, 
+#colButton5, 
+#colButton6, 
+#colButton7 {
+    margin: 0 4px;    
+    height: 56px;
+    width: 57px;
+    border-radius: 150px;
+    border: grey 1px solid;
+    padding: 0 0 10px 0;
+    background-color:black;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: bolder;
+    outline:none;
+}
+
+#colButton1:hover, 
+#colButton2:hover, 
+#colButton3:hover, 
+#colButton4:hover, 
+#colButton5:hover, 
+#colButton6:hover, 
+#colButton7:hover {
+    border: white 2px solid;
 }
 
 .bigSquare {
-    border-top: 1px solid white;
-    height: 450px;
-    width: 630px;
-    margin: 15px 20px 0 58px;
+    height: 390px;
+    width: 500px;
     padding: 10px; 
     border-radius: 20px;
-    background-color: blue;
-    display: inline-block;
-    /* position: fixed; */
+    background-color: black;
+    margin: 0 auto;
 }
 
 .bigSquare * {
     border: 2px solid black;
+    margin: 0px 4px;    
+    height: 56px;
+    width: 57px;
+    border-radius: 150px;
+    display: inline-block;
+    background-color: white;
+}
+
+.bigSquare *:hover {
+    border: 1px white solid;
+}
+
+#reset {
     height: 62px;
     width: 63px;
-    display: inline-block;
+    display: block;
     border-radius: 150px;
-    margin: 3px 10px;    
-    background-color: white;
+    margin: 0 auto;
+    border: white 1px solid;
+    background-color:black;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: bolder;
+    font-size: 17px;
+    outline:none;
+    color: white;
+    
+}
 
+#reset:hover {
+    border: white 2px solid;
 }
