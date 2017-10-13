@@ -3,6 +3,7 @@ var rowTracker;
 var b;
 var turn;
 var winner;
+var sounds;
 
 
 /*----- cached element references -----*/
