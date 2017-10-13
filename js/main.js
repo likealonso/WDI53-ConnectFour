@@ -94,7 +94,7 @@ function render() {
     // messages for winner/tie or next turn
     if (winner) {
         if (winner === 'T') {
-          $msg.html('Rats! ... tie game ...');
+          $msg.html('Rats! ... tie game ... Play again!');
         } else {
             if (winner==='#f44242'){
                 $msg.html(`Player Red has won! &#x1f604 ... Play again!`);
