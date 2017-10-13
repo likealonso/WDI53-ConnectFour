@@ -121,4 +121,9 @@ nav {
         height: 33px;
         width: 32px;
     }
+    
+    #reset {
+        text-align: center;
+        font-size: 13px;
+    }
 }
