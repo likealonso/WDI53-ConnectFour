@@ -91,3 +91,34 @@ nav {
 #reset:hover {
     border: white 2px solid;
 }
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 15px;
+    }
+
+    .bigSquare {
+        height: 270px;
+        width: 330px;
+    }
+
+    .bigSquare * {    
+        height: 33px;
+        width: 32px;
+    }
+
+    #colButton1, 
+    #colButton2, 
+    #colButton3, 
+    #colButton4, 
+    #colButton5, 
+    #colButton6, 
+    #colButton7 {
+        height: 33px;
+        width: 32px;
+    }
+}
