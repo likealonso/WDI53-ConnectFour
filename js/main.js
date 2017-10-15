@@ -30,31 +30,31 @@ $('#reset').on('click', function(){
 });
 
 // hovering circles/buttons atop
-$('#colButton1').on('click', function() {
+$('#col-button-1').on('click', function() {
     handleColumnClick('track');
 });
 
-$('#colButton2').on('click', function() {
+$('#col-button-2').on('click', function() {
     handleColumnClick('track2');
 });
 
-$('#colButton3').on('click', function() {
+$('#col-button-3').on('click', function() {
     handleColumnClick('track3');
 });
 
-$('#colButton4').on('click', function() {
+$('#col-button-4').on('click', function() {
     handleColumnClick('track4');
 });
 
-$('#colButton5').on('click', function() {
+$('#col-button-5').on('click', function() {
     handleColumnClick('track5');
 });
 
-$('#colButton6').on('click', function() {
+$('#col-button-6').on('click', function() {
     handleColumnClick('track6');
 });
 
-$('#colButton7').on('click', function() {
+$('#col-button-7').on('click', function() {
     handleColumnClick('track7');
 });
 
@@ -82,7 +82,7 @@ function init(){
     turn = '#f44242' ;
     winner = null;
     $msg.html(`Let's go again! Red goes first!`).css('color', '#f44242');    
-    $('.circle').css("background-color", "white");
+    $('.circle').css('background-color', 'white');
 }
 
 function render() {
@@ -136,14 +136,12 @@ function getWinner(idx) {
     for (var i=0; i<b.length; i++) {
         //vertical winning combinations
         if (b[i] && b[i]===b[i+7] && b[i]=== b[i+14] && b[i]===b[i+21]) {
-            console.log('we got a winner')
             return b[i]
         }
         
         //horizontal winning combinations
         for (var j=idx; j<idx + 4; j++) {
         if (b[j] && b[j]===b[j+1] && b[j]===b[j+2] && b[j]===b[j+3]){
-            console.log(b[j])
             return b[j]
             
             }  
