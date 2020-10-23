@@ -53,8 +53,8 @@ nav {
     width: 500px;
     padding: 10px; 
     border-radius: 20px;
-    background-color: black;
-    margin: 0 auto;
+    background-color: blue;
+    margin: 20px auto;
 }
 
 .bigSquare * {

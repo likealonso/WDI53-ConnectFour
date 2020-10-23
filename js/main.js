@@ -14,6 +14,7 @@ var $msg = $('h2');
 /*----- event listeners -----*/
 $circles.on('click', function() {    
     var idx = parseInt(this.id);
+    console.log(idx)
     if (b[idx] || winner) return;  
     if (b[idx + 7]===0) return;
     var rowTrackers = ['track', 'track2', 'track3', 'track4', 'track5', 'track6', 'track7'];
@@ -82,11 +83,12 @@ function init(){
     turn = '#f44242' ;
     winner = null;
     $msg.html(`Let's go again! Red goes first!`).css('color', '#f44242');    
-    $('.circle').css('background-color', 'white');
+    $('.circle').css('background-color', 'black');
 }
 
 function render() {
     $circles.each(function(idx) {
+        //console.log('idx ' + b[idx])
         // give the current div jQuery powers
         $(this).css('background-color', b[idx])
     });
@@ -113,6 +115,7 @@ function render() {
 
 function handleColumnClick(track){
     for (var idx=rowTracker[track]; idx>=0; idx-=7) {
+        console.log('idx ' + idx)
         if (b[idx+7]==='Yellow' || b[idx+7]==='#f44242' || b[idx+7]===undefined) {
             if (winner) return;  
             b[idx] = turn;
