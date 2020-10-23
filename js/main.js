@@ -82,7 +82,7 @@ function init(){
     turn = '#f44242' ;
     winner = null;
     $msg.html(`Let's go again! Red goes first!`).css('color', '#f44242');    
-    $('.circle').css("background-color", "white");
+    $('.circle').css("background-color", "black");
 }
 
 function render() {
