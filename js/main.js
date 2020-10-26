@@ -9,16 +9,16 @@ var sounds;
 /*----- cached element references -----*/
 var $circles = $('.bigSquare *');
 var $msg = $('h2');
-
-
+var url = "./audio/foley_chip_token_plastic_down_on_table_001.mp3"
 /*----- event listeners -----*/
-$circles.on('click', function() {    
+$circles.on('click', function() {   
     var idx = parseInt(this.id);
     if (b[idx] || winner) return;  
     if (b[idx + 7]===0) return;
     var rowTrackers = ['track', 'track2', 'track3', 'track4', 'track5', 'track6', 'track7'];
     rowTracker[rowTrackers[idx % 7]] -= 7;
     b[idx] = turn;
+    var playUrl = new Audio(url).play()
     turn = turn === '#f44242' ? 'Yellow' : '#f44242';
     winner = getWinner(idx);
     render();
@@ -116,6 +116,7 @@ function handleColumnClick(track){
         if (b[idx+7]==='Yellow' || b[idx+7]==='#f44242' || b[idx+7]===undefined) {
             if (winner) return;  
             b[idx] = turn;
+            new Audio(url).play()
             turn = turn === '#f44242' ? 'Yellow' : '#f44242';
             winner = getWinner(idx);            
             render();
